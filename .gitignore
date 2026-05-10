@@ -1,0 +1,3 @@
+# Legacy local exports kept outside the published bundle
+paper_summaries_google_style.html
+paper_summaries_google_style_chunk_*.html
