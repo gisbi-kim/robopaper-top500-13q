@@ -416,6 +416,31 @@ body.home-page .row-index {
 body.home-page .row-label {
   color: #1d1d1f;
 }
+
+body.home-page .action-row {
+  align-items: center;
+}
+
+body.home-page .action-row .home-link:first-child {
+  color: #fff;
+  background: linear-gradient(180deg, #0a84ff 0%, #0066cc 100%);
+  border-color: rgba(0, 102, 204, 0.40);
+  box-shadow: 0 18px 38px rgba(0, 102, 204, 0.24);
+  padding: 15px 22px;
+  font-size: 16px;
+  font-weight: 800;
+}
+
+body.home-page .action-row .home-link:first-child:hover {
+  background: linear-gradient(180deg, #2997ff 0%, #0071e3 100%);
+  box-shadow: 0 22px 46px rgba(0, 102, 204, 0.30);
+  transform: translateY(-2px);
+}
+
+body.home-page .action-row .home-link:first-child::after {
+  content: "→";
+  margin-left: 8px;
+}
 </style>
 </head>
 <body class="home-page">
