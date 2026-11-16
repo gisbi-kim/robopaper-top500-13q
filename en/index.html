@@ -1,0 +1,653 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1" name="viewport"/>
+<title>RoboPaper Atlas Summaries · English</title>
+<style>
+:root {
+  --bg: #f5f5f7;
+  --surface: rgba(255, 255, 255, 0.86);
+  --surface-solid: #ffffff;
+  --text: #1d1d1f;
+  --muted: #6e6e73;
+  --line: rgba(0, 0, 0, 0.09);
+  --blue: #0071e3;
+  --blue-soft: rgba(0, 113, 227, 0.10);
+  --shadow: 0 18px 48px rgba(0, 0, 0, 0.08), 0 2px 8px rgba(0, 0, 0, 0.04);
+  --shadow-hover: 0 26px 70px rgba(0, 0, 0, 0.12), 0 6px 18px rgba(0, 0, 0, 0.06);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  background:
+    radial-gradient(circle at 14% 0%, rgba(0, 113, 227, 0.08), transparent 30%),
+    linear-gradient(180deg, #fbfbfd 0%, var(--bg) 42%, #ffffff 100%);
+  color: var(--text);
+  font-family: -apple-system, BlinkMacSystemFont, "SF Pro Display", "SF Pro Text", "Noto Sans KR", "Segoe UI", sans-serif;
+  line-height: 1.58;
+  letter-spacing: 0;
+}
+
+a {
+  color: inherit;
+}
+
+.page {
+  width: min(1180px, calc(100% - 32px));
+  margin: 0 auto;
+  padding: 34px 0 72px;
+}
+
+.hero {
+  border: 1px solid var(--line);
+  border-radius: 28px;
+  background: rgba(255, 255, 255, 0.78);
+  box-shadow: var(--shadow);
+  backdrop-filter: blur(18px);
+  padding: 36px;
+  margin-bottom: 22px;
+}
+
+.eyebrow {
+  color: var(--blue);
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 0.02em;
+  margin-bottom: 10px;
+}
+
+h1 {
+  margin: 0;
+  font-size: clamp(34px, 6vw, 64px);
+  line-height: 1.04;
+  letter-spacing: 0;
+  font-weight: 780;
+}
+
+.subtitle {
+  max-width: 880px;
+  color: var(--muted);
+  font-size: 18px;
+  margin: 16px 0 0;
+}
+
+.stats {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-top: 28px;
+}
+
+.stat {
+  min-width: 146px;
+  border: 1px solid var(--line);
+  border-radius: 18px;
+  background: rgba(255, 255, 255, 0.74);
+  padding: 14px 16px;
+}
+
+.stat-value {
+  font-size: 23px;
+  font-weight: 760;
+  color: var(--text);
+}
+
+.stat-label {
+  color: var(--muted);
+  font-size: 12px;
+  margin-top: 3px;
+}
+
+.action-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-top: 24px;
+}
+
+.nav-panel {
+  position: sticky;
+  top: 0;
+  z-index: 8;
+  margin: 0 0 22px;
+  padding: 14px 0;
+  background: rgba(245, 245, 247, 0.82);
+  backdrop-filter: blur(18px);
+  border-bottom: 1px solid rgba(0, 0, 0, 0.06);
+}
+
+.nav-title {
+  color: var(--muted);
+  font-size: 13px;
+  font-weight: 700;
+  margin: 0 0 10px;
+}
+
+.nav-chips {
+  display: flex;
+  gap: 8px;
+  overflow-x: auto;
+  padding-bottom: 5px;
+}
+
+.nav-chip,
+.source-chip,
+.home-link {
+  flex: 0 0 auto;
+  display: inline-flex;
+  align-items: center;
+  min-height: 32px;
+  border: 1px solid rgba(0, 113, 227, 0.18);
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.76);
+  color: #0057b8;
+  text-decoration: none;
+  font-size: 13px;
+  font-weight: 650;
+  padding: 7px 12px;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.04);
+}
+
+.nav-chip:hover,
+.source-chip:hover,
+.home-link:hover {
+  background: #ffffff;
+  border-color: rgba(0, 113, 227, 0.34);
+  color: var(--blue);
+}
+
+.paper-card {
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-radius: 28px;
+  box-shadow: var(--shadow);
+  backdrop-filter: blur(18px);
+  padding: clamp(20px, 3vw, 34px);
+  margin: 24px 0;
+  transition: transform 180ms ease, box-shadow 180ms ease, border-color 180ms ease;
+  scroll-margin-top: 112px;
+}
+
+.paper-card:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-hover);
+  border-color: rgba(0, 113, 227, 0.16);
+}
+
+.paper-topline {
+  display: flex;
+  align-items: flex-start;
+  gap: 16px;
+  margin-bottom: 16px;
+}
+
+.paper-number {
+  width: 58px;
+  height: 58px;
+  flex: 0 0 auto;
+  border-radius: 18px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--blue-soft);
+  color: var(--blue);
+  font-size: 18px;
+  font-weight: 780;
+}
+
+.paper-meta {
+  min-width: 0;
+  flex: 1;
+}
+
+.venue-pill {
+  display: inline-flex;
+  align-items: center;
+  border-radius: 999px;
+  background: rgba(52, 199, 89, 0.12);
+  color: #187a35;
+  padding: 5px 11px;
+  font-size: 13px;
+  font-weight: 700;
+  margin-bottom: 10px;
+}
+
+h2 {
+  margin: 0 0 8px;
+  font-size: clamp(22px, 3vw, 32px);
+  line-height: 1.16;
+  letter-spacing: 0;
+  font-weight: 760;
+}
+
+.paper-url {
+  color: var(--blue);
+  font-size: 13px;
+  text-decoration: none;
+  word-break: break-word;
+  overflow-wrap: anywhere;
+}
+
+.paper-url:hover {
+  text-decoration: underline;
+}
+
+.one-line {
+  margin: 18px 0;
+  border: 1px solid rgba(0, 113, 227, 0.14);
+  border-left: 4px solid var(--blue);
+  border-radius: 18px;
+  background: rgba(0, 113, 227, 0.07);
+  color: #1d1d1f;
+  padding: 15px 17px;
+  font-size: 16px;
+  font-weight: 560;
+}
+
+.summary-list {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.summary-row {
+  --accent: #ff3b30;
+  --accent-dark: #b42318;
+  --tint: rgba(255, 59, 48, 0.075);
+  display: flex;
+  align-items: flex-start;
+  gap: 14px;
+  border: 1px solid rgba(0, 0, 0, 0.065);
+  border-left: 4px solid var(--accent);
+  border-radius: 18px;
+  background: linear-gradient(90deg, var(--tint), rgba(255, 255, 255, 0.88) 38%, rgba(255, 255, 255, 0.94));
+  padding: 14px;
+  transition: transform 160ms ease, border-color 160ms ease, box-shadow 160ms ease;
+}
+
+
+.summary-row:hover {
+  transform: translateY(-1px);
+  border-color: rgba(0, 0, 0, 0.12);
+  box-shadow: 0 8px 22px rgba(0, 0, 0, 0.055);
+}
+
+.row-index {
+  width: 38px;
+  min-width: 38px;
+  height: 38px;
+  border-radius: 999px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--tint);
+  color: var(--accent-dark);
+  border: 1px solid color-mix(in srgb, var(--accent) 30%, white);
+  font-size: 13px;
+  font-weight: 780;
+}
+
+.row-body {
+  min-width: 0;
+  flex: 1;
+}
+
+.row-label {
+  color: var(--accent-dark);
+  font-size: 13px;
+  font-weight: 780;
+  margin-bottom: 3px;
+}
+
+.row-text {
+  color: #2c2c2e;
+  font-size: 15.5px;
+  word-break: keep-all;
+  overflow-wrap: anywhere;
+}
+
+strong {
+  color: #0057b8;
+  font-weight: 800;
+}
+
+.sources {
+  margin-top: 18px;
+  border-top: 1px solid rgba(0, 0, 0, 0.07);
+  padding-top: 14px;
+}
+
+.sources-title {
+  color: var(--muted);
+  font-size: 12px;
+  font-weight: 780;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  margin-bottom: 9px;
+}
+
+.source-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.source-muted {
+  color: var(--muted);
+  font-size: 13px;
+}
+
+.footer-note {
+  color: var(--muted);
+  text-align: center;
+  font-size: 13px;
+  margin-top: 30px;
+}
+
+@media (max-width: 760px) {
+  .page {
+    width: min(100% - 22px, 1180px);
+    padding-top: 18px;
+  }
+
+  .hero {
+    padding: 22px;
+    border-radius: 24px;
+  }
+
+  .paper-card {
+    border-radius: 24px;
+  }
+
+  .paper-topline {
+    gap: 12px;
+  }
+
+  .paper-number {
+    width: 48px;
+    height: 48px;
+    border-radius: 15px;
+    font-size: 15px;
+  }
+
+  .summary-row {
+    gap: 12px;
+    padding: 12px;
+  }
+
+  .row-index {
+    width: 34px;
+    min-width: 34px;
+    height: 34px;
+  }
+
+  .row-text {
+    font-size: 14.5px;
+  }
+}
+
+
+body.home-page .summary-row {
+  --accent: #007aff;
+  --accent-dark: #1d1d1f;
+  --tint: rgba(255, 255, 255, 0.78);
+  background: var(--tint);
+}
+
+body.home-page .summary-row::before {
+  background: rgba(0, 122, 255, 0.34);
+}
+
+body.home-page .row-index {
+  color: #0066cc;
+  background: rgba(0, 122, 255, 0.09);
+  box-shadow: none;
+}
+
+body.home-page .row-label {
+  color: #1d1d1f;
+}
+
+body.home-page .action-row {
+  align-items: center;
+}
+
+body.home-page .action-row .home-link:first-child {
+  color: #fff;
+  background: linear-gradient(180deg, #0a84ff 0%, #0066cc 100%);
+  border-color: rgba(0, 102, 204, 0.40);
+  box-shadow: 0 18px 38px rgba(0, 102, 204, 0.24);
+  padding: 15px 22px;
+  font-size: 16px;
+  font-weight: 800;
+}
+
+body.home-page .action-row .home-link:first-child:hover {
+  background: linear-gradient(180deg, #2997ff 0%, #0071e3 100%);
+  box-shadow: 0 22px 46px rgba(0, 102, 204, 0.30);
+  transform: translateY(-2px);
+}
+
+body.home-page .action-row .home-link:first-child::after {
+  content: "→";
+  margin-left: 8px;
+}
+</style>
+<!-- bilingual:head -->
+  <link rel="canonical" href="https://gisbi-kim.github.io/robopaper-top500-13q/en/index.html">
+  <link rel="alternate" hreflang="ko" href="https://gisbi-kim.github.io/robopaper-top500-13q/index.html">
+  <link rel="alternate" hreflang="en" href="https://gisbi-kim.github.io/robopaper-top500-13q/en/index.html">
+  <script>(() => {
+  'use strict';
+  const key = 'robopaper-top500-language';
+  const language = document.documentElement.lang;
+  const page = location.pathname.split('/').pop() || 'index.html';
+  const query = new URLSearchParams(location.search);
+  const explicit = query.get('lang');
+  let saved;
+  try { saved = localStorage.getItem(key); } catch (_) { /* Links also work without storage. */ }
+  const preferred = /^(ko|en)$/.test(explicit || '') ? explicit : language === 'en' ? 'en' : saved;
+  if (preferred && preferred !== language && /^(ko|en)$/.test(preferred)) {
+    const target = new URL(language === 'en' ? '../' + page : 'en/' + page, location.href);
+    target.search = location.search;
+    target.hash = location.hash;
+    location.replace(target.href);
+    return;
+  }
+  try { localStorage.setItem(key, language); } catch (_) { /* Storage is optional. */ }
+  document.addEventListener('DOMContentLoaded', () => {
+    document.querySelectorAll('[data-language]').forEach(link => {
+      const updateTarget = () => {
+        const target = new URL(link.getAttribute('href'), location.href);
+        target.search = location.search;
+        target.searchParams.set('lang', link.dataset.language);
+        target.hash = location.hash;
+        link.href = target.href;
+      };
+      updateTarget();
+      link.addEventListener('click', () => {
+        updateTarget();
+        try { localStorage.setItem(key, link.dataset.language); } catch (_) { /* Optional. */ }
+      });
+    });
+  });
+})();
+</script>
+  <style>.language-bar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin: 0 0 18px;
+}
+.language-caption {
+  color: var(--muted);
+  font-size: 13px;
+  font-weight: 650;
+}
+.language-options {
+  display: inline-flex;
+  gap: 4px;
+  padding: 4px;
+  background: rgba(255, 255, 255, 0.9);
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
+}
+.language-option {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 44px;
+  min-width: 80px;
+  padding: 8px 18px;
+  border-radius: 999px;
+  color: var(--muted);
+  text-decoration: none;
+  font-size: 14px;
+  font-weight: 700;
+}
+.language-option:hover { background: var(--blue-soft); color: #0057b8; }
+.language-option[aria-current="page"] { background: #0071e3; color: #fff; }
+.language-option:focus-visible { outline: 3px solid #0071e3; outline-offset: 3px; }
+.translation-note {
+  margin: 18px 0 0;
+  padding-top: 14px;
+  border-top: 1px solid var(--line);
+  color: var(--muted);
+  font-size: 13px;
+}
+html[lang="en"] .row-text { word-break: normal; }
+</style>
+<!-- /bilingual:head --></head>
+<body class="home-page">
+<main class="page"><!-- bilingual:nav -->
+    <nav class="language-bar" aria-label="Language selection">
+      <span class="language-caption">Reading language</span>
+      <div class="language-options">
+        <a class="language-option" data-language="ko" lang="ko" hreflang="ko" href="../index.html?lang=ko">한국어</a>
+        <a class="language-option" data-language="en" lang="en" hreflang="en" href="index.html?lang=en" aria-current="page">English</a>
+      </div>
+    </nav>
+<!-- /bilingual:nav -->
+<section class="hero">
+<div class="eyebrow">RoboPaper Atlas · public bundle</div>
+<h1>Robotics Top-500 Paper Summaries</h1>
+<p class="subtitle">Structured by a 13-Question Insight Framework</p>
+<p class="subtitle">A self-contained HTML collection of 500 highly cited robotics papers,<br/>with structured notes on their background, methods, validation, limitations, and public resources.</p>
+<div class="stats">
+<div class="stat"><div class="stat-value">500</div><div class="stat-label">papers</div></div>
+<div class="stat"><div class="stat-value">6,500</div><div class="stat-label">summary rows</div></div>
+<div class="stat"><div class="stat-value">10</div><div class="stat-label">chunk files</div></div>
+<div class="stat"><div class="stat-value">13</div><div class="stat-label">fixed items</div></div>
+</div>
+<div class="action-row">
+<a class="home-link" href="paper_summaries_apple_style.html">Open all 500 summaries</a>
+<a class="home-link" href="https://gisbi-kim.github.io/robopaper-atlas/index.html" rel="noopener" target="_blank">RoboPaper Atlas</a>
+</div>
+<!-- bilingual:note -->
+<p class="translation-note">English summaries are machine translations of the Korean reading notes. Check technical details, numerical results, and resource availability against the original papers.</p>
+<!-- /bilingual:note --></section>
+<section class="paper-card">
+<div class="paper-topline">
+<div class="paper-number">SRC</div>
+<div class="paper-meta">
+<div class="venue-pill">Citation</div>
+<h2>Source Citation</h2>
+<a class="paper-url" href="https://gisbi-kim.github.io/robopaper-atlas/index.html" rel="noopener" target="_blank">https://gisbi-kim.github.io/robopaper-atlas/index.html</a>
+</div>
+</div>
+<div class="summary-list">
+<div class="summary-row">
+<div class="row-index">01</div>
+<div class="row-body">
+<div class="row-label">Original source</div>
+<div class="row-text">The paper ranking and venue range on this page are based on RoboPaper Atlas' ICRA / IROS / RA-L / T-RO / RSS / IJRR / Sci-Rob / SoRo / T-Mech / T-FR / RA-P / T-ASE / RAM / CoRL / iSpaRo Paper Explorer.</div>
+</div>
+</div>
+<div class="summary-row">
+<div class="row-index">02</div>
+<div class="row-body">
+<div class="row-label">Data provenance</div>
+<div class="row-text">RoboPaper Atlas is a robotics paper navigation page that uses DBLP, Crossref, OpenAlex-based DOI-deduped paper index and Semantic Scholar citation count.</div>
+</div>
+</div>
+<div class="summary-row">
+<div class="row-index">03</div>
+<div class="row-body">
+<div class="row-label">Summary framework</div>
+<div class="row-text">For the 13 fixed questions and single column summary row configuration for each paper, refer to <a class="source-chip" href="https://gisbi-kim.github.io/paper-reading-13-questions/" rel="noopener" target="_blank">13 Questions for Deep Paper Reading</a>.</div>
+</div>
+</div>
+<div class="summary-row">
+<div class="row-index">04</div>
+<div class="row-body">
+<div class="row-label">Links</div>
+<div class="row-text">The original Atlas site is <a class="source-chip" href="https://gisbi-kim.github.io/robopaper-atlas/index.html" rel="noopener" target="_blank">https://gisbi-kim.github.io/robopaper-atlas/index.html</a>.</div>
+</div>
+</div>
+</div>
+</section>
+<section class="paper-card">
+<div class="paper-topline">
+<div class="paper-number">10</div>
+<div class="paper-meta">
+<div class="venue-pill">Chunks</div>
+<h2>Chunk Pages</h2>
+<div class="paper-url">Each chunk contains 50 papers and 650 summary rows.</div>
+</div>
+</div>
+<div class="nav-chips">
+<a class="nav-chip" href="paper_summaries_chunk_001_050.html">001-050</a>
+<a class="nav-chip" href="paper_summaries_chunk_051_100.html">051-100</a>
+<a class="nav-chip" href="paper_summaries_chunk_101_150.html">101-150</a>
+<a class="nav-chip" href="paper_summaries_chunk_151_200.html">151-200</a>
+<a class="nav-chip" href="paper_summaries_chunk_201_250.html">201-250</a>
+<a class="nav-chip" href="paper_summaries_chunk_251_300.html">251-300</a>
+<a class="nav-chip" href="paper_summaries_chunk_301_350.html">301-350</a>
+<a class="nav-chip" href="paper_summaries_chunk_351_400.html">351-400</a>
+<a class="nav-chip" href="paper_summaries_chunk_401_450.html">401-450</a>
+<a class="nav-chip" href="paper_summaries_chunk_451_500.html">451-500</a>
+</div>
+</section>
+<section class="paper-card">
+<div class="paper-topline">
+<div class="paper-number">QA</div>
+<div class="paper-meta">
+<div class="venue-pill">Notes</div>
+<h2>Public Notes</h2>
+<div class="paper-url">The notes distinguish verified information from unverified resource links.</div>
+</div>
+</div>
+<div class="summary-list">
+<div class="summary-row">
+<div class="row-index">01</div>
+<div class="row-body">
+<div class="row-label">Structure</div>
+<div class="row-text">The integrated version includes 500 cards and 6,500 summary rows, and each chunk file can independently open 50 papers.</div>
+</div>
+</div>
+<div class="summary-row">
+<div class="row-index">02</div>
+<div class="row-body">
+<div class="row-label">Verification status</div>
+<div class="row-text">Code, dataset, and project links that could not be verified are marked as “Not verified” or “Public link not verified” on each card.</div>
+</div>
+</div>
+</div>
+</section>
+<div class="footer-note">RoboPaper Atlas summaries · self-contained local HTML bundle.</div>
+</main>
+</body>
+</html>

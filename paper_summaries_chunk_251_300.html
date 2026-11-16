@@ -408,9 +408,104 @@ strong {
   }
 }
 </style>
-</head>
+<!-- bilingual:head -->
+  <link rel="canonical" href="https://gisbi-kim.github.io/robopaper-top500-13q/paper_summaries_chunk_251_300.html">
+  <link rel="alternate" hreflang="ko" href="https://gisbi-kim.github.io/robopaper-top500-13q/paper_summaries_chunk_251_300.html">
+  <link rel="alternate" hreflang="en" href="https://gisbi-kim.github.io/robopaper-top500-13q/en/paper_summaries_chunk_251_300.html">
+  <script>(() => {
+  'use strict';
+  const key = 'robopaper-top500-language';
+  const language = document.documentElement.lang;
+  const page = location.pathname.split('/').pop() || 'index.html';
+  const query = new URLSearchParams(location.search);
+  const explicit = query.get('lang');
+  let saved;
+  try { saved = localStorage.getItem(key); } catch (_) { /* Links also work without storage. */ }
+  const preferred = /^(ko|en)$/.test(explicit || '') ? explicit : language === 'en' ? 'en' : saved;
+  if (preferred && preferred !== language && /^(ko|en)$/.test(preferred)) {
+    const target = new URL(language === 'en' ? '../' + page : 'en/' + page, location.href);
+    target.search = location.search;
+    target.hash = location.hash;
+    location.replace(target.href);
+    return;
+  }
+  try { localStorage.setItem(key, language); } catch (_) { /* Storage is optional. */ }
+  document.addEventListener('DOMContentLoaded', () => {
+    document.querySelectorAll('[data-language]').forEach(link => {
+      const updateTarget = () => {
+        const target = new URL(link.getAttribute('href'), location.href);
+        target.search = location.search;
+        target.searchParams.set('lang', link.dataset.language);
+        target.hash = location.hash;
+        link.href = target.href;
+      };
+      updateTarget();
+      link.addEventListener('click', () => {
+        updateTarget();
+        try { localStorage.setItem(key, link.dataset.language); } catch (_) { /* Optional. */ }
+      });
+    });
+  });
+})();
+</script>
+  <style>.language-bar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin: 0 0 18px;
+}
+.language-caption {
+  color: var(--muted);
+  font-size: 13px;
+  font-weight: 650;
+}
+.language-options {
+  display: inline-flex;
+  gap: 4px;
+  padding: 4px;
+  background: rgba(255, 255, 255, 0.9);
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
+}
+.language-option {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 44px;
+  min-width: 80px;
+  padding: 8px 18px;
+  border-radius: 999px;
+  color: var(--muted);
+  text-decoration: none;
+  font-size: 14px;
+  font-weight: 700;
+}
+.language-option:hover { background: var(--blue-soft); color: #0057b8; }
+.language-option[aria-current="page"] { background: #0071e3; color: #fff; }
+.language-option:focus-visible { outline: 3px solid #0071e3; outline-offset: 3px; }
+.translation-note {
+  margin: 18px 0 0;
+  padding-top: 14px;
+  border-top: 1px solid var(--line);
+  color: var(--muted);
+  font-size: 13px;
+}
+html[lang="en"] .row-text { word-break: normal; }
+</style>
+<!-- /bilingual:head --></head>
 <body>
-  <main class="page">
+  <main class="page"><!-- bilingual:nav -->
+    <nav class="language-bar" aria-label="언어 선택">
+      <span class="language-caption">읽기 언어</span>
+      <div class="language-options">
+        <a class="language-option" data-language="ko" lang="ko" hreflang="ko" href="paper_summaries_chunk_251_300.html?lang=ko" aria-current="page">한국어</a>
+        <a class="language-option" data-language="en" lang="en" hreflang="en" href="en/paper_summaries_chunk_251_300.html?lang=en">English</a>
+      </div>
+    </nav>
+<!-- /bilingual:nav -->
     <section class="hero">
       <div class="eyebrow">RoboPaper Atlas · chunk 251-300</div>
       <h1>Robotics Papers 251-300</h1>
@@ -425,7 +520,9 @@ strong {
         <a class="home-link" href="index.html">Home</a>
         <a class="home-link" href="paper_summaries_apple_style.html">전체 통합본</a>
       </div>
-    </section>
+    <!-- bilingual:note -->
+<p class="translation-note">영어 요약은 한국어 연구 노트의 기계 번역입니다. 기술적 세부 사항, 수치와 공개 자원 여부는 원문 논문에서 확인해 주세요.</p>
+<!-- /bilingual:note --></section>
 
     <section class="nav-panel" aria-label="paper navigation">
       <div class="nav-title">Paper Navigation</div>
